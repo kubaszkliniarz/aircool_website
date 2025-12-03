@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F.H.U. AIRCOOL ROBERT SZKLINIARZ</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <style>
+    :root {
+      --primary: #2a80b9;
+      --accent: #3597db;
+      --bg: #f7f7f7;
+      --text: #222;
+      --muted: #666;
+    }
+    html { box-sizing: border-box; scroll-behavior: smooth; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body {
+      margin: 0; font-family: 'Lato', Arial, sans-serif; background: var(--bg); color: var(--text);
+    }
+    header {
+      background: #fff; color: var(--text); position: relative;
+    }
+    .main-nav {
+      display: flex; justify-content: center; padding: 1rem 0; background: #fff; box-shadow: 0 2px 8px #0002;
+    }
+    .nav-list {
+      display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;
+    }
+    .nav-link {
+      color: var(--primary); text-decoration: none; font-weight: 600; letter-spacing: 1px;
+      padding: 0.5rem 1rem; border-radius: 3px; transition: background 0.2s, color 0.2s;
+    }
+    .nav-link:focus, .nav-link:hover {
+      background: var(--accent); color: #fff; outline: none;
+    }
+    .hero {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      min-height: 45vh; background: linear-gradient(120deg, var(--primary) 60%, var(--accent) 100%);
+      color: #fff; text-align: center; padding: 3rem 1rem 2rem 1rem;
+    }
+    .hero-title { font-size: 2.5rem; margin: 0.5rem 0 0.2rem 0; }
+    .hero-subtitle { font-size: 1.2rem; margin: 0.5rem 0 0 0; color: #e0e0e0; }
+    main { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+    section { margin-bottom: 3rem; }
+    .section-title { font-size: 2rem; color: var(--primary); margin-bottom: 1.5rem; text-align: center; }
+    /* Services */
+    .services {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;
+    }
+    .service {
+      background: #fff; border-radius: 12px; box-shadow: 0 2px 8px #0001; padding: 2rem 1.2rem; text-align: center;
+      display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.2s;
+    }
+    .service:hover { box-shadow: 0 4px 16px #0002; }
+    .service-icon {
+      font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;
+    }
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.2rem;
+    }
+    .gallery-item {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px #0001;
+      background: #eee;
+      transition: box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .gallery-item:focus, .gallery-item:hover {
+      box-shadow: 0 4px 16px #0002;
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      background: #eee;
+      transition: transform 0.2s;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+    /* Lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
+      animation: fadeIn 0.2s;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .lightbox-content {
+      position: relative;
+      background: #fff;
+      border-radius: 8px;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow: auto;
+      box-shadow: 0 8px 32px #0003;
+    }
+    .lightbox-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .lightbox-content p {
+      margin: 0.5rem 1rem;
+      font-weight: bold;
+      color: var(--text);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 10px; right: 10px;
+      width: 40px; height: 40px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .lightbox-close:hover, .lightbox-close:focus {
+      background: rgba(0,0,0,0.9);
+      outline: none;
+    }
+    /* Contact */
+    .contact-grid {
+      display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: flex-start;
+    }
+    .contact-grid > div { min-width:220px; }
+    /* Footer */
+    footer {
+      background: var(--primary); color: #fff; text-align: center; padding: 1.5rem 0 1rem 0; font-size: 1rem;
+    }
+    @media (max-width: 900px) {
+      .hero-title { font-size: 1.5rem; }
+      .section-title { font-size: 1.3rem; }
+      .service { padding: 1rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header id="home" class="welcome-hero-area">
+    <nav class="main-nav">
+      <div style="display:flex;align-items:center;justify-content:center;max-width:1100px;margin:0 auto;">
+        <div style="flex:0 0 auto;display:flex;align-items:center;">
+          <img src="logo.jpg" alt="Aircool logo" style="height:48px;width:auto;margin-right:24px;">
+        </div>
+        <ul class="nav-list" style="flex:1 1 auto;">
+          <li><a class="nav-link" href="#home">Strona domowa</a></li>
+          <li><a class="nav-link" href="#aboutus">O nas</a></li>
+          <li><a class="nav-link" href="#services">Usługi</a></li>
+          <li><a class="nav-link" href="#portfolio">Realizacje</a></li>
+          <li><a class="nav-link" href="#contactus">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title" style="font-size:2rem;margin-bottom:0.5rem;">F.H.U. AIRCOOL</h1>
+        <p class="hero-subtitle" style="font-size:1.1rem;">Chłodnictwo, klimatyzacja, profesjonalne usługi od 1997 roku</p>
+      </div>
+    </section>
+  </header>
+  <main>
+    <section id="services">
+      <div class="section-title">Nasze Usługi</div>
+      <div class="services">
+        <div class="service">
+          <div class="service-icon">❄️</div>
+          <h3>Chłodnictwo</h3>
+          <p>Montaż i serwis instalacji chłodniczych, komór chłodniczych i mroźniczych, mebli chłodniczych.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">🌬️</div>
+          <h3>Klimatyzacja</h3>
+          <p>Projektowanie, montaż i serwis klimatyzacji do domów, biur i przemysłu.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">⚙️</div>
+          <h3>Automatyka</h3>
+          <p>Nowoczesne systemy sterowania, automatyka chłodnicza i klimatyzacyjna.</p>
+        </div>
+        <div class="service">
+          <div class="service-icon">🛠️</div>
+          <h3>Wsparcie techniczne</h3>
+          <p>Naprawa, konserwacja i doradztwo techniczne dla firm i klientów indywidualnych.</p>
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <div class="section-title">Nasze Realizacje</div>
+      <div class="gallery">
+        <a href="images/IMLU7bR.jpg" class="gallery-item">
+          <picture>
+            <source srcset="images/IMLU7bR.webp" type="image/webp">
+            <img src="images/IMLU7bR.jpg" alt="Montaż komory chłodniczej - profesjonalna instalacja chłodnicza" loading="lazy">
+          </picture>
+        </a>
+        <a href="images/njtThAh.jpg" class="gallery-item">
+          <picture>
+            <source srcset="images/njtThAh.webp" type="image/webp">
+            <img src="images/njtThAh.jpg" alt="Instalacja jednostki zewnętrznej - jednostka chłodnicza" loading="lazy">
+          </picture>
+        </a>
+        <a href="images/ZU07WTU.jpg" class="gallery-item">
+          <picture>
+            <source srcset="images/ZU07WTU.webp" type="image/webp">
+            <img src="images/ZU07WTU.jpg" alt="System klimatyzacji przemysłowej - wdrożenie dla zakładu" loading="lazy">
+          </picture>
+        </a>
+        <a href="images/i6NjCHc.jpg" class="gallery-item">
+          <picture>
+            <source srcset="images/i6NjCHc.webp" type="image/webp">
+            <img src="images/i6NjCHc.jpg" alt="Chłodnia Lady - kompletne wyposażenie chłodnicze" loading="lazy">
+          </picture>
+        </a>
+        <a href="images/hWqIWKr.jpg" class="gallery-item">
+          <picture>
+            <source srcset="images/hWqIWKr.webp" type="image/webp">
+            <img src="images/hWqIWKr.jpg" alt="Montaż automatyki chłodniczej - system sterowania" loading="lazy">
+          </picture>
+        </a>
+        <a href="images/GdgemOH.jpg" class="gallery-item">
+          <picture>
+            <source srcset="images/GdgemOH.webp" type="image/webp">
+            <img src="images/GdgemOH.jpg" alt="Chłodnia Lady - wnętrze z meblami chłodniczymi" loading="lazy">
+          </picture>
+        </a>
+        <a href="images/y0L2UTB.jpg" class="gallery-item">
+          <picture>
+            <source srcset="images/y0L2UTB.webp" type="image/webp">
+            <img src="images/y0L2UTB.jpg" alt="Agregat chłodniczy Bitzer - sprężarka półhermetyczna" loading="lazy">
+          </picture>
+        </a>
+        <a href="images/pPIQJTl.jpg" class="gallery-item">
+          <picture>
+            <source srcset="images/pPIQJTl.webp" type="image/webp">
+            <img src="images/pPIQJTl.jpg" alt="Panel sterowania instalacją - kontrola temperatury" loading="lazy">
+          </picture>
+        </a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 F.H.U. Aircool | Wszelkie prawa zastrzeżone.
+  </footer>
+  <script>
+    // Hamburger toggle, ARIA, keyboard support, sticky nav (<=20 lines)
+    const toggle = document.querySelector('.navbar-toggle');
+    const nav = document.getElementById('mainnav');
+    toggle.addEventListener('click', () => {
+      const expanded = nav.getAttribute('aria-expanded') === 'true';
+      nav.setAttribute('aria-expanded', !expanded);
+      toggle.setAttribute('aria-expanded', !expanded);
+      if (!expanded) nav.querySelector('a').focus();
+    });
+    toggle.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') toggle.click();
+    });
+    // Keyboard nav: close menu with Escape
+    nav.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        nav.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+    // Smooth scroll for anchor links (for browsers that don't support scroll-behavior)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) {
+          e.preventDefault();
+          target.scrollIntoView({behavior: 'smooth'});
+        }
+      });
+    });
+  </script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
