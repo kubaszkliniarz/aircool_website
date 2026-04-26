@@ -1,10 +1,10 @@
-name: Deploy new_website to GitHub Pages
+name: Deploy public_html to GitHub Pages
 
 on:
   push:
     branches: [master]
     paths:
-      - 'new_website/**'
+      - 'public_html/**'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -30,10 +30,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload new_website as Pages artifact
+      - name: Upload public_html as Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./new_website
+          path: ./public_html
 
       - name: Deploy to GitHub Pages
         id: deployment
