@@ -67,16 +67,16 @@ p { margin: 0 0 1em; }
   color: var(--text); font-weight: 600; font-size: .95rem; transition: background .2s var(--ease), color .2s var(--ease);
 }
 .nav-list a:hover { background: var(--ice); color: var(--navy); }
-.nav-cta {
+.nav-list a.nav-cta {
   display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap;
-  background: transparent; color: var(--navy) !important;
-  padding: .45rem .8rem !important; border-radius: 8px !important;
+  background: transparent; color: var(--navy);
+  padding: .45rem .8rem; border-radius: 8px;
   font-weight: 700; font-size: .92rem; line-height: 1;
   border: 1.5px solid var(--navy);
   transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease);
 }
-.nav-cta:hover { background: var(--navy); color: #fff !important; border-color: var(--navy); }
-.nav-cta svg { width: 14px; height: 14px; flex-shrink: 0; display: block; }
+.nav-list a.nav-cta:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+.nav-list a.nav-cta svg { width: 14px; height: 14px; flex-shrink: 0; }
 .nav-toggle {
   display: none; background: none; border: 0; padding: .5rem;
   cursor: pointer; color: var(--navy);
