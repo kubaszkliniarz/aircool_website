@@ -39,9 +39,9 @@
   </g>
 
   <!-- AIR -->
-  <text x="55" y="195"
+  <text x="60" y="170"
         font-family="Montserrat, Poppins, Arial Black, sans-serif"
-        font-size="180"
+        font-size="150"
         font-weight="900"
         letter-spacing="-2"
         fill="#1f8ec9">
@@ -49,9 +49,9 @@
   </text>
 
   <!-- COOL -->
-  <text x="395" y="195"
+  <text x="380" y="170"
         font-family="Montserrat, Poppins, Arial Black, sans-serif"
-        font-size="180"
+        font-size="150"
         font-weight="900"
         letter-spacing="-2"
         fill="url(#coolText)">

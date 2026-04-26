@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<svg width="900" height="260" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <defs>
+  <!-- Right side + border gradient (darker, lighter upward) -->
+  <linearGradient id="darkGrad" x1="0" x2="0" y1="1" y2="0">
+   <stop offset="0%" stop-color="#2f2f2f"/>
+   <stop offset="100%" stop-color="#6a6a6a"/>
+  </linearGradient>
+  <!-- Left light gradient -->
+  <linearGradient id="lightGrad" x1="0" x2="1" y1="0" y2="1">
+   <stop offset="0%" stop-color="#ffffff"/>
+   <stop offset="100%" stop-color="#dcdcdc"/>
+  </linearGradient>
+  <!-- COOL text -->
+  <linearGradient id="coolText" x1="0" x2="0" y1="0" y2="1">
+   <stop offset="0%" stop-color="#ffffff"/>
+   <stop offset="100%" stop-color="#d0d0d0"/>
+  </linearGradient>
+ </defs>
+ <!-- Outer border (now gradient-matched) -->
+ <!-- Inner background -->
+ <clipPath id="clip">
+  <rect height="230" id="svg_1" rx="34" width="870" x="15" y="15"/>
+ </clipPath>
+ <!-- AIR -->
+ <!-- COOL -->
+ <g class="layer">
+  <title>Layer 1</title>
+  <rect fill="url(#darkGrad)" height="250" id="svg_2" rx="40" width="890" x="5" y="5"/>
+  <g clip-path="url(#clip)" id="svg_3">
+   <!-- Right dark -->
+   <rect fill="url(#darkGrad)" height="260" id="svg_4" width="900" x="0" y="0"/>
+   <!-- Left light with sharper diagonal -->
+   <polygon fill="url(#lightGrad)" id="svg_5" points="0,0 420,0 360,260 0,260"/>
+  </g>
+  <text fill="#1f8ec9" font-family="Montserrat, Poppins, Arial Black, sans-serif" font-size="180" font-weight="900" id="svg_6" letter-spacing="-2" x="55" y="195">AIR</text>
+  <text fill="url(#coolText)" font-family="Montserrat, Poppins, Arial Black, sans-serif" font-size="160.43" font-weight="900" id="svg_7" letter-spacing="-2" transform="matrix(1 0 0 1.04858 0 -11.891)" x="395" y="195">COOL</text>
+ </g>
+</svg>
