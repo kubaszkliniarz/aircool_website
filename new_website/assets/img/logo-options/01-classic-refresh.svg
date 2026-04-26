@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" role="img" aria-label="AIRCOOL">
+  <g font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="64" letter-spacing="-1">
+    <text x="20" y="68" fill="#1F8FD5">AIR</text>
+    <text x="142" y="68" fill="#0A2540">COOL</text>
+  </g>
+  <rect x="20" y="76" width="320" height="3" rx="1.5" fill="#0A2540" opacity=".15"/>
+</svg>

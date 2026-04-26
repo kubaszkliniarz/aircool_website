@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+
+# VS Code workspace settings — keep local only
+# CRITICAL: sftp.json contains your FTP password and MUST NOT be committed
+.vscode/
+
+# Node (if ever added)
+node_modules/
+
+# Build output
+dist/
+build/

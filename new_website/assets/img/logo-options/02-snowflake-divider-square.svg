@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="AIRCOOL">
+  <rect width="200" height="200" rx="24" fill="#ffffff"/>
+  <g font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="48" letter-spacing="-1" text-anchor="middle">
+    <text x="100" y="86" fill="#1F8FD5">AIR</text>
+    <text x="100" y="158" fill="#0A2540">COOL</text>
+  </g>
+  <g transform="translate(100,108)" stroke="#1F8FD5" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M0 -14 V14"/>
+    <path d="M-12 0 H12"/>
+    <path d="M-9 -9 L9 9"/>
+    <path d="M9 -9 L-9 9"/>
+    <circle cx="0" cy="0" r="2.4" fill="#1F8FD5" stroke="none"/>
+  </g>
+</svg>
